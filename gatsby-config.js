@@ -1,10 +1,14 @@
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
   siteMetadata: {
     title: `Headless Test Site`,
-    siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: ["gatsby-plugin-sass"]
+  plugins: [
+    {
+      resolve: `gatsby-source-drupal`,
+      options: {
+        baseUrl: `https://dev-headless-test-site.pantheonsite.io/`,
+      },
+    },
+    `gatsby-plugin-sass`,
+  ],
 };
