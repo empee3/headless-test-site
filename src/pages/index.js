@@ -1,15 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
+import ArticleList from "../components/articleList"
 
 const IndexPage = ({data}) => {
   return (
     <main>
-      {data.allNodeArticle.edges.map((article, index) => (
-        <article key={index}>
-          <h2>{article.node.title}</h2>
-          <div dangerouslySetInnerHTML={{__html: article.node.body.value}} />
-        </article>
-      ))}
+      <ArticleList />
     </main>
   ) 
 }

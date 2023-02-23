@@ -1,24 +1,8 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
-const ArticleList = ({data}) => {
-    return (
-        <>
-            {data.allNodeArticle.edges.map((article, index) => (
-                <article key={index}>
-                    <h2>{article.title}</h2>
-                    <p>{article.body.value}</p>
-                </article>
-            ))}
-        </>
-    )
-}
-
-export default ArticleList;
-
-export const articleQuery = 
-<StaticQuery 
-  query={graphql`
+export default function ArticleList () {
+  const data = useStaticQuery(graphql`
     query {
       allNodeArticle {
         edges {
@@ -31,5 +15,16 @@ export const articleQuery =
         }
       }
     }
-  `} 
-/>
+  `)
+
+  return (
+    <>
+      {data.allNodeArticle.edges.map((article, index) => (
+        <article key={index}>
+            <h2>{article.node.title}</h2>
+            <div dangerouslySetInnerHTML={{__html: article.node.body.value}} />
+        </article>
+      ))}
+    </>
+  )
+}
