@@ -1,6 +1,9 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import ArticleList from '../components/articleList';
+
+/**
+ * Index page, shows a list of article nodes from the Drupal site
+ */
 
 const IndexPage = () => {
   return (
@@ -13,18 +16,3 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head = () => <title>Home Page</title>;
-
-export const query = graphql`
-  query {
-    allNodeArticle {
-      edges {
-        node {
-          title
-          body {
-            value
-          }
-        }
-      }
-    }
-  }
-`;
