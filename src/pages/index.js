@@ -1,18 +1,18 @@
-import React from "react"
-import { graphql } from "gatsby"
-import ArticleList from "../components/articleList"
+import React from 'react';
+import { graphql } from 'gatsby';
+import ArticleList from '../components/articleList';
 
-const IndexPage = ({data}) => {
+const IndexPage = () => {
   return (
     <main>
       <ArticleList />
     </main>
-  ) 
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => <title>Home Page</title>;
 
 export const query = graphql`
   query {
@@ -27,4 +27,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
