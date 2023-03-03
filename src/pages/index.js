@@ -1,16 +1,18 @@
 import React from 'react';
-import ArticleList from '../components/articleList';
-import '../styles/styles.scss';
+import Layout from '../components/layout/layout';
+import ArticleList from '../components/articleList/articleList';
+
+//import '../styles/styles.scss';
 
 /**
- * Index page, shows a list of article nodes from the Drupal site
+ * Index page, currently shows a list of article nodes from the Drupal site
  */
 
 const IndexPage = () => {
   return (
-    <main>
+    <Layout>
       <ArticleList />
-    </main>
+    </Layout>
   );
 };
 

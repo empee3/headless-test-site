@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import * as articleStyles from './articleList.module.scss';
 
 export default function ArticleList() {
   const data = useStaticQuery(graphql`
@@ -30,7 +31,7 @@ export default function ArticleList() {
   return (
     <>
       {data.allNodeArticle.edges.map((article, index) => (
-        <article key={index}>
+        <article key={index} className={articleStyles.article}>
           <h2>{article.node.title}</h2>
           {/* Conditional with JavaScript logical && operator */}
           {article.node.field_image && (
