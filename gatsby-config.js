@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: 'Headless Test Site',
@@ -6,7 +10,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-drupal',
       options: {
-        baseUrl: 'https://dev-headless-test-site.pantheonsite.io/',
+        baseUrl: process.env.SITE_URL,
       },
     },
     'gatsby-plugin-sass',
