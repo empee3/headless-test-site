@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import * as articleStyles from './articleList.module.scss';
 
 export default function ArticleList() {
@@ -10,10 +10,13 @@ export default function ArticleList() {
           node {
             title
             body {
-              value
+              summary
             }
             field_image {
               alt
+            }
+            path {
+              alias
             }
             relationships {
               field_image {
@@ -41,7 +44,8 @@ export default function ArticleList() {
               className="article--image"
             />
           )}
-          <div dangerouslySetInnerHTML={{ __html: article.node.body.value }} />
+          <p dangerouslySetInnerHTML={{ __html: article.node.body.summary }} />
+          <Link to={article.node.path.alias}>Read More...</Link>
         </article>
       ))}
     </>
