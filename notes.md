@@ -18,4 +18,5 @@ This is my notes page of things I have learned while working on the project. It 
 - [x] Set up `stylelint`
 - [ ] Change article body to only display excerpt, and pull in excerpt instead of full body
 - [ ] Set up routing to make article title a link that will direct user to a page with full article content
+- [ ] Sort articles
 - [ ] Add tests with Jest
