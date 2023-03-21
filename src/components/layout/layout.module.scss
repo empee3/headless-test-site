@@ -1,7 +1,13 @@
 @use '../../styles/variables';
 
 body {
+  background: variables.$lightgray;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+main {
+  background: variables.$white;
 }
 
 h2 {
