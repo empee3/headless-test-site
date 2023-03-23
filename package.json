@@ -12,7 +12,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint:css": "stylelint 'src/**/*.scss'"
   },
   "lint-staged": {
     "*.js": [

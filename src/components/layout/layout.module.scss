@@ -10,6 +10,10 @@ main {
   background: variables.$white;
 }
 
+h1 {
+  margin-bottom: 1.5rem;
+}
+
 h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -22,5 +26,5 @@ p {
 .layout {
   margin: 0 auto; 
   max-width: variables.$bp-large;
-  padding: 0 1rem;
+  padding: 2rem 1.5rem;
 }
