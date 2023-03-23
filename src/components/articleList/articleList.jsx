@@ -5,7 +5,7 @@ import * as articleStyles from './articleList.module.scss';
 export default function ArticleList() {
   const data = useStaticQuery(graphql`
     query {
-      allNodeArticle {
+      allNodeArticle(sort: {created: DESC}) {
         edges {
           node {
             title
@@ -18,6 +18,7 @@ export default function ArticleList() {
             path {
               alias
             }
+            created(formatString:"MM/DD/YYYY")
             relationships {
               field_image {
                 uri {
@@ -36,6 +37,7 @@ export default function ArticleList() {
       {data.allNodeArticle.edges.map((article, index) => (
         <article key={index} className={articleStyles.article}>
           <h2>{article.node.title}</h2>
+          <p className="articleDate">{article.node.created}</p>
           {/* Conditional with JavaScript logical && operator */}
           {article.node.field_image && (
             <img

@@ -16,7 +16,7 @@ This is my notes page of things I have learned while working on the project. It 
 - [x] Add `eslint` and set up pre-commit hook
 - [x] Add Drupal site URL as a `env` variable, and replace in Gatsby config
 - [x] Set up `stylelint`
-- [ ] Change article body to only display excerpt, and pull in excerpt instead of full body
-- [ ] Set up routing to make article title a link that will direct user to a page with full article content
+- [x] Change article body to only display excerpt, and pull in excerpt instead of full body
+- [x] Set up routing to make article title a link that will direct user to a page with full article content
 - [ ] Sort articles
 - [ ] Add tests with Jest
